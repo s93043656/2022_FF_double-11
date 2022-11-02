@@ -107,7 +107,7 @@ option{
     position: relative;
     color: #000;
     width: 180px;
-    height: 30px;
+    height: 34px;
 }
 .select-styled {
     position: absolute;
@@ -397,7 +397,7 @@ tr:last-child td:first-child{
     border-bottom-left-radius: 15px;
 }
 tr:last-child td:last-child{
-        border-bottom-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 table tr th:first-child,table tr td:first-child {/*設定table左邊邊框*/
@@ -557,10 +557,14 @@ span{
     filter: drop-shadow(0px 3px 0px #150067);
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     z-index: 2;
 }
+.userCash{
+    margin: 0 40px;
+}
 .refill{
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .acctybg{
     display: flex;
@@ -600,7 +604,7 @@ span{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 14px;
+    padding-top: 14px;
     width: 188px;
     height: 229px;
     margin: 5px;
@@ -610,7 +614,7 @@ span{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 14px;
+    padding-top: 14px;
     width: 188px;
     height: 229px;
     margin: 5px;
