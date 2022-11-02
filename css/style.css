@@ -561,7 +561,7 @@ span{
     z-index: 2;
 }
 .userCash{
-    margin: 0 40px;
+    margin: 0 40px !important;
 }
 .refill{
     justify-content: flex-start;
