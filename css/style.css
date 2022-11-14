@@ -249,7 +249,7 @@ option{
     100% {transform: translate(-50%,-50%) scale(1);}
 }
 .popti{
-    margin: 20px;
+    margin: 20px auto;
 }
 #menu_pre .popti{
     width: 222px;

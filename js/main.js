@@ -66,11 +66,11 @@ $('select').each(function(){
 });
 
 
-var splitCookie = document.cookie.split("timeCookie=");
+// var splitCookie = document.cookie.split("timeCookie=");
 // 檢查cookie有無資料,有就續跑
-if($.isNumeric(splitCookie[1])){
-    cookieTimer(splitCookie[1])
-}
+// if($.isNumeric(splitCookie[1])){
+//     cookieTimer(splitCookie[1])
+// }
 
 // 只執行一次的click
 // $(".btn").one("click", function () {
@@ -78,54 +78,54 @@ if($.isNumeric(splitCookie[1])){
 // });
 
 // 點擊刷新
-$(".btn.refresh").on("click", function () {
-    document.cookie = "timeCookie=900";
-    location.reload()
-});
+// $(".btn.refresh").on("click", function () {
+//     document.cookie = "timeCookie=900";
+//     location.reload()
+// });
 
-function cookieTimer(setTime){
+// function cookieTimer(setTime){
+// }
 // 計時器
-    const startTime = new Date().getTime();
-    const targetSeconds = setTime;
-    var timer = function (startTime) {
-        var currentTime = new Date().getTime();
-        var diffSec = Math.round((currentTime - startTime) / 1000);
-        var remainingTime = targetSeconds - diffSec;
+const startTime = new Date().getTime();
+const targetSeconds = timeCookie=60;
+var timer = function (startTime) {
+    var currentTime = new Date().getTime();
+    var diffSec = Math.round((currentTime - startTime) / 1000);
+    var remainingTime = targetSeconds - diffSec;
 
-        update(remainingTime);   
-        if (remainingTime == 0) {
-            clearInterval(timerId);
-            document.cookie = "timeCookie=0";
-            $(".msg").text("時間到囉(☍﹏⁰)");
-            $(".lockbg , .btn_o").addClass('lockon');
-        } 
-    }
+    update(remainingTime);   
+    if (remainingTime == 0) {
+        clearInterval(timerId);
+        document.cookie = "timeCookie=0";
+        $(".msg").text("時間到囉(☍﹏⁰)");
+        $(".lockbg , .btn_o").addClass('lockon');
+    } 
+}
 
-    var timerId = setInterval( function () { 
-        timer(startTime);
-    }, 1000);
-        function update (seconds) {
-        barRenderer(seconds);
-        textRenderer(seconds);
-    }
+var timerId = setInterval( function () { 
+    timer(startTime);
+}, 1000);
+    function update (seconds) {
+    barRenderer(seconds);
+    textRenderer(seconds);
+}
 
-    function barRenderer (seconds) {
-    //   遞減計算。
-    //   var percent = (seconds / targetSeconds) * 100;
-    //   $(".bar").css("width", percent + "%");
-    //   遞增計算。
-        var percent_2 = (1 - (seconds / targetSeconds)) * 100;
-        $(".bar_2").css("width", percent_2 + "%");
-    }
+function barRenderer (seconds) {
+//   遞減計算。
+//   var percent = (seconds / targetSeconds) * 100;
+//   $(".bar").css("width", percent + "%");
+//   遞增計算。
+    var percent_2 = (1 - (seconds / targetSeconds)) * 100;
+    $(".bar_2").css("width", percent_2 + "%");
+}
 
-    function textRenderer (seconds) {
-        document.cookie = "timeCookie=" + seconds + "";
-        var sec = seconds % 60;  
-        var min = Math.floor(seconds / 60); 
-        min = min.toString().padStart(2, '0');
-        sec = sec.toString().padStart(2, '0');
-        $(".text").text(min + ":" + sec);		
-    }
+function textRenderer (seconds) {
+    document.cookie = "timeCookie=" + seconds + "";
+    var sec = seconds % 60;  
+    var min = Math.floor(seconds / 60); 
+    min = min.toString().padStart(2, '0');
+    sec = sec.toString().padStart(2, '0');
+    $(".text").text(min + ":" + sec);		
 }
 
 var currentTop = $(window).scrollTop();
