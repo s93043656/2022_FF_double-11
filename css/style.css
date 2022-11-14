@@ -249,7 +249,7 @@ option{
     100% {transform: translate(-50%,-50%) scale(1);}
 }
 .popti{
-    margin: 20px auto;
+    margin: 20px;
 }
 #menu_pre .popti{
     width: 222px;
@@ -261,7 +261,7 @@ option{
     height: 35px;
     background-image: url('../img/details.png');
 }
-#gift_buy .popti,#gift_refresh .popti{
+#gift_buy .popti,#gift_refresh .popti,#pop_normal .popti{
     width: 160px;
     height: 35px;
     background-image: url('../img/tip.png');
